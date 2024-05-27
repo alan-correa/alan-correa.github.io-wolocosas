@@ -1,0 +1,451 @@
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* General */
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Kanit", sans-serif;
+    text-decoration: none;
+    list-style: none;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas: 
+        'navbar'
+        'main'
+        'footer';
+}
+
+/*MobileFirst*/
+
+.lg {
+    font-size: 42px;
+}
+
+/*NavBar*/
+
+.navbar {
+    grid-area: navbar;
+    background-color: #22AAA1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo {
+    font-weight: 500;
+    color: white;
+    display: flex;
+    padding: 16px;
+    animation: rotate 3s ease both;
+}
+
+#expand-toggle {
+    display: none;
+}
+
+.menu-icon {
+    color: white;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.barra {
+    width: 100%;
+    height: 0;
+    background-color: #136F63;
+    transition: all 0.5s;
+}
+
+.link {
+    display: block;
+    padding: 16px;
+    color: white;
+}
+
+.link:hover {
+    background-color: #4CE0D2;
+    color: #000;
+}
+
+#expand-toggle:checked ~ .barra {
+    height: auto;
+    padding: 16px 0;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    25%,
+    75% {
+        filter: opacity(50%);
+    }
+    50% {
+        transform: rotate(360deg);
+        filter: opacity(15%);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/*Main*/
+
+.main {
+    display: grid;
+    grid-area: main;
+    grid-template-areas: 
+        'juegos'
+        'bandas'
+        'equipos';
+    padding: 8px;
+}
+
+.card {
+    object-fit: cover;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 13%;
+    box-shadow: 8px 8px 8px #136F63;
+    filter: grayscale(100%);
+    transition: 3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    transition: 2s ease;
+    filter: none;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    height: 32px;
+    background-color: #136F63;
+    grid-area: titulo;
+    color: #fff;
+}
+
+.titulo h1 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.titulo h1:hover {
+    transition: 3s ease;
+    color: #4CE0D2;
+    cursor: default;
+}
+
+.titulo:hover {
+    animation: bg-color 4s ease 1 alternate both;
+}
+
+@keyframes bg-color {
+    0%,
+    100% {
+        background-color: #22AAA1;
+    }
+    50% {
+        background-color: #4CE0D2;
+    }
+}
+
+#vjuegos {
+    grid-area: juegos;
+    display: grid;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    padding: 36px;
+    grid-template-areas: 
+        "titulo titulo"
+        "j3 j3"
+        "j4 j1"
+        "j6 j6"
+        "j5 j2";
+}
+
+.j1 {
+    grid-area: j1;
+}
+
+.j2 {
+    grid-area: j2;
+}
+
+.j3 {
+    grid-area: j3;
+}
+
+.j4 {
+    grid-area: j4;
+}
+
+.j5 {
+    grid-area: j5;
+}
+
+.j6 {
+    grid-area: j6;
+}
+
+
+
+#band {
+    grid-area: bandas;
+    display: grid;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    padding: 36px;
+    grid-template-areas: 
+        "titulo titulo"
+        "m1 m2"
+        "m3 m4"
+        "m5 m6";
+}
+
+.m1 {
+    grid-area: m1;
+}
+
+.m2 {
+    grid-area: m2;
+}
+
+.m3 {
+    grid-area: m3;
+}
+
+.m4 {
+    grid-area: m4;
+}
+
+.m5 {
+    grid-area: m5;
+}
+
+.m6 {
+    grid-area: m6;
+}
+
+#futbol {
+    grid-area: equipos;
+    display: grid;
+    max-width: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 26px;
+    padding: 36px;
+    grid-template-areas: 
+        "titulo titulo"
+        "f2 f2"
+        "f1 f3"
+        "f5 f5"
+        "f6 f4";
+}
+
+.f1 {
+    grid-area: f1;
+}
+
+.f2 {
+    grid-area: f2;
+}
+
+.f3 {
+    grid-area: f3;
+}
+
+.f4 {
+    grid-area: f4;
+}
+
+.f5 {
+    grid-area: f5;
+}
+
+.f6 {
+    grid-area: f6;
+}
+
+/*Footer*/
+
+.footer {
+    grid-area: footer;
+    background-color: #136F63;
+    color: #fff;
+    padding: 16px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px
+}
+
+.footer p {
+    font-size: 16px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer a:hover {
+    color: #4CE0D2;
+    transition: 2s ease;
+    transform: scale(1.2);
+}
+
+/*Desktop*/
+
+@media (min-width: 576px) {
+    .container {
+        display: grid;
+        grid-template-areas:
+            "navbar main"
+            "navbar main"
+            "navbar footer";
+        grid-template-columns: 2fr 10fr;
+        min-height: 100vh;
+    }
+
+
+
+    .menu-icon {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+    }
+
+    .link {
+        font-size: 16px;
+    }
+
+    .barra {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+        width: 70%;
+        background-color: #22AAA1;
+    }
+
+    .titulo {
+        height: 48px;
+        font-size: 28px;
+    }
+
+    #vjuegos {
+        grid-template-areas: 
+            "titulo titulo"
+            "j1 j4"
+            "j6 j4"
+            "j3 j2"
+            "j5 j2";
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .j1,
+    .j3 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .j1 img:hover {
+        transform: scale(0.9);
+    }
+
+    .j3 img:hover {
+        transform: scale(0.9);
+    }
+
+    #band {
+        grid-template-areas:
+            "titulo titulo"
+            "m1 m2"
+            "m1 m4"
+            "m5 m3"
+            "m5 m6";
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .m1,
+    .m2,
+    .m3,
+    .m4,
+    .m5,
+    .m6 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .m2 img {
+        width: 95%;
+    }
+
+    .m4 img {
+        width: 95%;
+    }
+
+    .m3 img {
+        width: 95%;
+    }
+
+    .m6 img {
+        width: 95%;
+    }
+
+    .m1 img:hover {
+        transform: scale(0.9);
+    }
+
+    .m5 img:hover {
+        transform: scale(0.9);
+    }
+
+    #futbol {
+        grid-template-areas:
+            "titulo titulo"
+            "f5 f1"
+            "f3 f1"
+            "f6 f2"
+            "f4 f2";
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .f1,
+    .f4 {
+        display: flex;
+        align-items: center;
+    }
+
+    .f1 img:hover {
+        transform: scale(0.9);
+    }
+
+    .f4 img:hover {
+        transform: scale(0.9);
+    }
+
+}
